@@ -3,19 +3,18 @@ package Model;
 public class EmployeeModel {
     private String username;
     private String password;
-    private String employeeRole;
-    private String firstName;
-    private String lastName;
+    private boolean employeeRoleManager;
+
 
     public EmployeeModel() {
 
     }
-    public EmployeeModel(String username, String password, String employeeRole, String firstName, String lastName) {
+
+    public EmployeeModel(String username, String password, boolean employeeRoleManager) {
         this.username = username;
         this.password = password;
-        this.employeeRole = employeeRole;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.employeeRoleManager = employeeRoleManager;
+
     }
 
     public String getUsername() {
@@ -34,28 +33,21 @@ public class EmployeeModel {
         this.password = password;
     }
 
-    public String getEmployeeRole() {
-        return employeeRole;
+    public boolean getEmployeeRoleManager() {
+        return employeeRoleManager;
     }
 
-    public void setEmployeeRole(String employeeRole) {
-        this.employeeRole = employeeRole;
+    public void setEmployeeRoleManager(boolean employeeRole) {
+        this.employeeRoleManager = employeeRoleManager;
     }
 
-    public String getFirstName() {
-        return firstName;
+    @Override
+
+    public String toString() {
+         return "Employee{" + "Employee Username is: " + username + " , Employee role manager? :" + employeeRoleManager + "}";
+
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 }
 

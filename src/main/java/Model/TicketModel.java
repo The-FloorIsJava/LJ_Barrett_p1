@@ -2,21 +2,25 @@ package Model;
 
 public class TicketModel {
     private String reimbursementID;
-    private String serialID;
+    private int serialID;
+
+    private String requester;
+
     private String description;
     private String status;
-    private int amount;
+    private double amount;
 
 
     public TicketModel() {
 
     }
-    public TicketModel(String reimbursementID, String serialID, String description, String status, int amount) {
+    public TicketModel(String reimbursementID, int serialID, String requester,String description, String status, double amount) {
         this.reimbursementID = reimbursementID;
-        this.serialID = serialID;
+        this.requester = requester;
         this.description = description;
-        this.status = status;
+        this.status = "Pending";
         this.amount = amount;
+        this.serialID =serialID;
 
     }
     public String getReimbursementID() {
@@ -27,12 +31,12 @@ public class TicketModel {
         this.reimbursementID = reimbursementID;
     }
 
-    public String getSerialID() {
-        return serialID;
+    public String getRequester() {
+        return requester;
     }
 
-    public void setSerialID(String serialID) {
-        this.serialID = serialID;
+    public void setRequester(String requester) {
+        this.requester = requester;
     }
 
     public String getDescription() {
@@ -51,11 +55,23 @@ public class TicketModel {
         this.status = status;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public int getSerialID() {
+        return serialID;
+    }
+
+    public void setSerialID(int serialID) {
+        this.serialID = serialID;
+    }
+
+    public String toString() {
+        return "Ticket {" + "reimbursementID is: " + reimbursementID + "SerialID is: " + serialID + "description is: " + description + " amount is: " + amount + " the requestor is: " + requester + "Status is: " + status +  "}";
     }
 }
